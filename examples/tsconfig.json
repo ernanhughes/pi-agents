@@ -9,6 +9,6 @@
     "skipLibCheck": true,
     "types": ["node"]
   },
-  "include": ["ch*/**/*.ts", "harness/**/*.ts", "experiences/**/*.ts", "export-experience.ts", "real-model/**/*.ts"],
+  "include": ["ch*/**/*.ts", "harness/**/*.ts", "experiences/**/*.ts", "export-experience.ts", "real-model/**/*.ts", "capstone-patch-desk/*.ts"],
   "exclude": ["node_modules"]
 }

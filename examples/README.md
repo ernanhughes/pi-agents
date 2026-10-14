@@ -124,6 +124,7 @@ Each directory is one chapter's runnable evidence, named for the chapter:
 ```text
 examples/
 ├── harness/            shared test infrastructure (sessions, CLI, RPC, faux provider)
+├── capstone-patch-desk/ public end-to-end capstone: parser fixture → Pi patch → host verification → review
 ├── ch01-…  ch02-…      one directory per chapter that has code
 ├── ch38-typed-step/    the typed step, with its 14 tests
 ├── ch40-composition/   the escalate-only-if-needed pipeline
@@ -152,6 +153,26 @@ node --test ch38-typed-step/step.test.ts
 Individual example files are plain modules with no build step, so you can also read one
 and run it directly. TypeScript runs natively on Node 22.19+ via type stripping; that
 is why `npm install` is the only setup step.
+
+## Run the capstone
+
+```bash
+npm run capstone
+npm run capstone -- --scenario injection
+npm run test:capstone
+```
+
+[Pi Patch Desk](capstone-patch-desk/README.md) composes the book's mechanisms into
+one public application. A scripted **actual Pi 1.0.4 loop** investigates and edits
+a disposable parser fixture; fixed host tests, typecheck, and an independent grader
+determine the outcome. The host writes a patch and seven-file review dossier under
+the gitignored `capstone-patch-desk/runs/` directory. It never applies a patch to
+the original fixture. The injection demonstration deliberately exits **1**.
+
+The capstone guide includes the JSON driver and optional Pi interactive command.
+It is self-contained in this public repository; a future private book chapter can
+reference it. Scripted success does not measure real-model quality, and its
+temporary directory and policy hooks do not provide OS containment.
 
 ## The faux provider
 

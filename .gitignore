@@ -1,4 +1,5 @@
 .remembering/
+examples/capstone-patch-desk/runs/
 # Logs
 logs
 *.log

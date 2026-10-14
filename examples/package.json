@@ -4,6 +4,9 @@
   "type": "module",
   "description": "Executable evidence for the code in the Pi Agents manuscript, pinned to the Pi release the book declares.",
   "scripts": {
+    "capstone": "node capstone-patch-desk/cli.ts",
+    "capstone:interactive": "node capstone-patch-desk/interactive.ts",
+    "test:capstone": "node --test capstone-patch-desk/*.test.ts",
     "typecheck": "tsc -p .",
     "check-embedded": "node check-embedded.mjs",
     "test": "node --test \"**/*.test.ts\"",

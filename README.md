@@ -21,6 +21,9 @@ npm test
 
 See [the examples guide](examples/README.md) for prerequisites and evidence
 limits, and [the notebook guide](notebooks/pi/README.md) for chapter companions.
+For the end-to-end capstone, see [Pi Patch Desk](examples/capstone-patch-desk/README.md):
+run `npm run capstone` from `examples/` to reproduce a parser bug, let a scripted
+Pi agent propose a fix in a disposable copy, and review the patch and test dossier.
 Manuscript checks, evidence regeneration, metadata synchronisation, and notebooks
 still expect book files at repository-relative paths. Those files are not
 included here; a sibling manuscript checkout alone does not satisfy the current
@@ -31,6 +34,8 @@ scripts. The standalone commands above check code without comparing chapter snip
 | Path | Role |
 |---|---|
 | `examples/` | Chapter examples, tests, pinned packages, and evidence ledger |
+| `examples/capstone-patch-desk/` | Public Pi Patch Desk capstone, fixture, host, tests and walkthrough |
+| `prompts/` | Capstone design and implementation briefs; older book-layout assumptions are adapted in the capstone guide |
 | `notebooks/pi/` | Jupyter companions, planning notes, and historical execution reports |
 | `.pi/` | Project-local learning and development resources |
 | `docs/extensions/` | Supporting documentation for local extensions |
@@ -106,6 +111,11 @@ After editing any `.pi` file, run `/reload` inside Pi — no restart needed.
 6. **Service (Postgres)** — open `.pi/extensions/postgres-tool.ts`. See [docs/extensions/postgres-extension.md](docs/extensions/postgres-extension.md) for detailed documentation and setup.
    Ask Pi: `use pg_query to show tables`. DB `postgresql://pi:pi@localhost:5432/pi`
    already answers `SELECT 1` (verified). Set `DATABASE_URL`, `/reload`, ask again.
+7. **Capstone** — from `examples/`, run `npm run capstone`, then
+   `npm run capstone -- --scenario injection`. Open the generated `review.md`,
+   `patch.diff`, and `tests.json`. The second command deliberately exits 1.
+   Follow the [Pi Patch Desk walkthrough](examples/capstone-patch-desk/README.md)
+   to inspect completed Pi tools, host verification, and the human decision.
 
 ## Postgres
 

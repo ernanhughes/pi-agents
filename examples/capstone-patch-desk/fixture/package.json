@@ -1,0 +1,6 @@
+{
+  "name": "patch-desk-parser-fixture",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test tests/regression.ts" }
+}

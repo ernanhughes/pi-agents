@@ -1,0 +1,30 @@
+# Python dependencies for the Pi Agents notebook companions.
+#
+# Deliberately minimal: the notebooks use the standard library only, plus the
+# pieces needed to *execute* and *validate* .ipynb files. There is no plotting
+# library, no dataframe library and no HTTP client, because nothing in the set
+# needs one.
+#
+# The pinned Node packages are NOT installed from here. They come from the book's
+# existing pin and lockfile:
+#
+#     cd examples
+#     npm ci          # or npm install
+#
+# The Node toolchain is a prerequisite, not a Python dependency:
+#
+#     node --version  # must be >= 22.19; type stripping runs the examples directly
+
+# Validating notebook format and metadata.
+nbformat==5.11.1
+
+# Executing notebooks in a fresh kernel and saving the outputs.
+nbclient==0.11.0
+
+# The kernel itself.
+ipykernel==7.3.0
+jupyter_core==5.9.1
+
+# Serving the set. `jupyter lab` also works; any notebook server will do.
+jupyter_client==8.10.0
+traitlets==5.16.1

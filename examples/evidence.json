@@ -1,0 +1,3218 @@
+{
+  "versions": {
+    "pi-ai": "1.0.4",
+    "pi-agent-core": "1.0.4",
+    "pi-coding-agent": "1.0.4",
+    "node": "v25.8.2"
+  },
+  "typecheckErrors": 0,
+  "rows": [
+    {
+      "chapter": "01",
+      "file": "ch01-agent-core/agent-core.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "chapter 1: the agent core runs with no provider and no terminal",
+      "ms": 338
+    },
+    {
+      "chapter": "03",
+      "file": "ch03-credentials/credentials.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the environment variable is used when nothing else is configured",
+      "ms": 8
+    },
+    {
+      "chapter": "03",
+      "file": "ch03-credentials/credentials.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a stored auth.json credential beats the environment variable",
+      "ms": 3
+    },
+    {
+      "chapter": "03",
+      "file": "ch03-credentials/credentials.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an apiKey in models.json beats the environment variable",
+      "ms": 13
+    },
+    {
+      "chapter": "03",
+      "file": "ch03-credentials/credentials.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a runtime key beats everything",
+      "ms": 13
+    },
+    {
+      "chapter": "03",
+      "file": "ch03-credentials/credentials.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the first source that yields a credential wins, and the rest are never consulted: runtime, then auth.json, then models.json, then environment",
+      "ms": 26
+    },
+    {
+      "chapter": "03",
+      "file": "ch03-credentials/credentials.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a model can load from models.json and still be unavailable until its provider has usable authentication",
+      "ms": 7
+    },
+    {
+      "chapter": "03",
+      "file": "ch03-credentials/credentials.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the same policy and the same script behave identically whichever way the provider's key is written",
+      "ms": 344
+    },
+    {
+      "chapter": "04",
+      "file": "ch04-budget/budget.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the footer's number is real: it is context usage over the window, and grows with the conversation",
+      "ms": 47
+    },
+    {
+      "chapter": "04",
+      "file": "ch04-budget/budget.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the trigger is arithmetic: compaction happens when contextTokens exceeds contextWindow minus reserveTokens, and not before",
+      "ms": 55
+    },
+    {
+      "chapter": "04",
+      "file": "ch04-budget/budget.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a larger reserve compacts earlier: the same conversation, different settings, different turn",
+      "ms": 98
+    },
+    {
+      "chapter": "04",
+      "file": "ch04-budget/budget.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a per-model override changes the threshold for that model, and the key is exact and case-sensitive",
+      "ms": 62
+    },
+    {
+      "chapter": "04",
+      "file": "ch04-budget/budget.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "enabled: false turns off automatic compaction, and the manual command still works",
+      "ms": 31
+    },
+    {
+      "chapter": "04",
+      "file": "ch04-budget/budget.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "/compact accepts instructions, and an extension sees them",
+      "ms": 21
+    },
+    {
+      "chapter": "04",
+      "file": "ch04-budget/budget.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the model sees the active branch, not the session file: leaving a branch removes it from the next request and not from the file",
+      "ms": 101
+    },
+    {
+      "chapter": "04",
+      "file": "ch04-budget/budget.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "only active tools are declared to the model",
+      "ms": 21
+    },
+    {
+      "chapter": "05",
+      "file": "ch05-disk/disk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "every turn is on disk as it happens: a header, then one entry per message, in order",
+      "ms": 91
+    },
+    {
+      "chapter": "05",
+      "file": "ch05-disk/disk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "entries form a tree by id and parentId; for a linear conversation each parent is the entry before",
+      "ms": 65
+    },
+    {
+      "chapter": "05",
+      "file": "ch05-disk/disk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "stored is not the same as sent: model and thinking-level entries and a custom entry are on disk and never reach the provider",
+      "ms": 68
+    },
+    {
+      "chapter": "05",
+      "file": "ch05-disk/disk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a context_edit hides an earlier message from future requests without deleting it, and is branch-relative",
+      "ms": 76
+    },
+    {
+      "chapter": "05",
+      "file": "ch05-disk/disk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a replacement context_edit rewrites one message's content for the model and leaves the file's original untouched",
+      "ms": 66
+    },
+    {
+      "chapter": "05",
+      "file": "ch05-disk/disk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the default session location is --<path>--, with / \\ and : replaced by - and the leading separator removed",
+      "ms": 353
+    },
+    {
+      "chapter": "05",
+      "file": "ch05-disk/disk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "session directory precedence: --session-dir beats PI_CODING_AGENT_SESSION_DIR, which beats the sessionDir setting",
+      "ms": 928
+    },
+    {
+      "chapter": "05",
+      "file": "ch05-disk/disk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "deleting a session is deleting its file: nothing else holds it",
+      "ms": 66
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/settings.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "defaultTools: a project list of only +name and -name edits the user's selection",
+      "ms": 19
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/settings.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "defaultTools: a project list containing a plain name replaces the selection outright",
+      "ms": 12
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/settings.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "defaultTools: within one list, plain names form the selection and +/- then apply in order",
+      "ms": 6
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/settings.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "defaultTools: -name removes from the user's list",
+      "ms": 4
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/settings.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "scalar settings: the project value wins over the user value",
+      "ms": 3
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/settings.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "scalar settings: a nested key the project does not set still comes from the user file",
+      "ms": 9
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/settings.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the SettingsManager getter returns one scope's list; the union happens when resources load (see union.test.ts)",
+      "ms": 3
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/settings.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "untrusted project: its settings are not read at all",
+      "ms": 3
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/settings.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "trust can be granted later, and the project layer then applies",
+      "ms": 5
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/settings.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "defaultProjectTrust is an agent-directory setting: a project file cannot set it",
+      "ms": 3
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/union.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "resource lists from the user and project files are both loaded",
+      "ms": 24
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/union.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an untrusted project contributes nothing",
+      "ms": 7
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/union.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "omitting an entry in the project file removes nothing",
+      "ms": 20
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/union.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an exclusion filter works in the file that lists the resource",
+      "ms": 29
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/union.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a project-file exclusion does not reach a user-level resource, observed on 1.0.4",
+      "ms": 26
+    },
+    {
+      "chapter": "07",
+      "file": "ch07-settings/union.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a project-file exclusion does work on the project's own entries",
+      "ms": 7
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/decision.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "with no override, extension or saved decision, print mode cannot ask and the default is ask: the project extension does not load",
+      "ms": 319
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/decision.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "--approve and --no-approve decide first",
+      "ms": 744
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/decision.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "defaultProjectTrust: always loads protected project resources, while ask and never skip them",
+      "ms": 1948
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/decision.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a saved decision for the directory applies without any flag",
+      "ms": 2469
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/decision.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a saved decision beats defaultProjectTrust",
+      "ms": 2947
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/decision.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a command-line flag beats a saved decision",
+      "ms": 1736
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/decision.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a project_trust handler in a command-line extension decides before saved decisions and the default",
+      "ms": 2034
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/decision.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an extension that answers undecided hands the decision on",
+      "ms": 628
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/decision.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the flag still outranks an extension",
+      "ms": 456
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/trust.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a bare .pi directory does not need a decision",
+      "ms": 2
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/trust.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "each documented trigger asks for a decision",
+      "ms": 11
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/trust.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "context files are NOT a trigger: they load regardless of trust",
+      "ms": 2
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/trust.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": ".agents/skills in an ancestor directory counts when you start below it",
+      "ms": 2
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/trust.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "saved decisions: the closest one applies, and a parent decision covers its children",
+      "ms": 11
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/trust.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "decisions persist in trust.json in the agent directory",
+      "ms": 3
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/trust.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a decision can be cleared by setting it to null",
+      "ms": 8
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/trust.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "untrusted: the project's extension and prompt template do not load, but its AGENTS.md still does",
+      "ms": 9
+    },
+    {
+      "chapter": "08",
+      "file": "ch08-trust/trust.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "trusted: the same project's extension and prompt template load",
+      "ms": 110
+    },
+    {
+      "chapter": "09",
+      "file": "ch09-shell/shell.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "session variables are injected into the model's bash tool",
+      "ms": 92
+    },
+    {
+      "chapter": "09",
+      "file": "ch09-shell/shell.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "PI_SESSION_FILE is unset for an ephemeral session, which is how a script can tell",
+      "ms": 59
+    },
+    {
+      "chapter": "09",
+      "file": "ch09-shell/shell.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the values are resolved when each command starts, so a change of thinking level shows up in the next command",
+      "ms": 106
+    },
+    {
+      "chapter": "09",
+      "file": "ch09-shell/shell.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "session variables are NOT injected into a user-entered ! command",
+      "ms": 98
+    },
+    {
+      "chapter": "09",
+      "file": "ch09-shell/shell.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "shellCommandPrefix runs before every command, for the model's tool and for ! commands",
+      "ms": 109
+    },
+    {
+      "chapter": "09",
+      "file": "ch09-shell/shell.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "aliases: absent in a non-interactive shell, present once the prefix enables and sources them",
+      "ms": 121
+    },
+    {
+      "chapter": "09",
+      "file": "ch09-shell/shell.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a non-zero exit is reported by the built-in tool as a result the model can read",
+      "ms": 57
+    },
+    {
+      "chapter": "11",
+      "file": "ch11-guard/guard.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "regression: the first version of this guard missed a plain `git push`",
+      "ms": 121
+    },
+    {
+      "chapter": "11",
+      "file": "ch11-guard/guard.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the fixed guard asks about a plain git push, and a person can allow or refuse",
+      "ms": 84
+    },
+    {
+      "chapter": "11",
+      "file": "ch11-guard/guard.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "anything under migrations/ is confirmed, and an ordinary command is not",
+      "ms": 77
+    },
+    {
+      "chapter": "11",
+      "file": "ch11-guard/guard.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "with no UI to ask, the safe answer is to refuse",
+      "ms": 12
+    },
+    {
+      "chapter": "11",
+      "file": "ch11-guard/guard.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a force push is refused outright, and no confirmation is offered",
+      "ms": 44
+    },
+    {
+      "chapter": "11",
+      "file": "ch11-guard/guard.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an ordinary push is still a confirmation, so the two requirements stay distinct",
+      "ms": 56
+    },
+    {
+      "chapter": "12",
+      "file": "ch12-templates/templates.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "${1:-default}: the default applies with no argument",
+      "ms": 52
+    },
+    {
+      "chapter": "12",
+      "file": "ch12-templates/templates.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an argument replaces the default",
+      "ms": 18
+    },
+    {
+      "chapter": "12",
+      "file": "ch12-templates/templates.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "shell-like quoting: a quoted phrase is one argument",
+      "ms": 16
+    },
+    {
+      "chapter": "12",
+      "file": "ch12-templates/templates.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the substitution table: $1, $2, $@, $ARGUMENTS, ${@:N}, ${@:N:L}",
+      "ms": 17
+    },
+    {
+      "chapter": "12",
+      "file": "ch12-templates/templates.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an extension command with the same name wins over the template",
+      "ms": 19
+    },
+    {
+      "chapter": "12",
+      "file": "ch12-templates/templates.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an extension input handler sees the raw text before expansion",
+      "ms": 24
+    },
+    {
+      "chapter": "12",
+      "file": "ch12-templates/templates.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "conventional prompt directories load direct .md children only",
+      "ms": 12
+    },
+    {
+      "chapter": "13",
+      "file": "ch13-skills/skills.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the system prompt carries each skill's name, description and path, and not its body",
+      "ms": 42
+    },
+    {
+      "chapter": "13",
+      "file": "ch13-skills/skills.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a skill with no description is not loaded",
+      "ms": 15
+    },
+    {
+      "chapter": "13",
+      "file": "ch13-skills/skills.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "/skill:name loads the body as the request, and arguments are appended",
+      "ms": 15
+    },
+    {
+      "chapter": "13",
+      "file": "ch13-skills/skills.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "disable-model-invocation hides the skill from the model but not from /skill:name",
+      "ms": 19
+    },
+    {
+      "chapter": "13",
+      "file": "ch13-skills/skills.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "skills are discovered recursively, unlike prompt templates",
+      "ms": 16
+    },
+    {
+      "chapter": "13",
+      "file": "ch13-skills/skills.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a name collision keeps the first discovered skill",
+      "ms": 20
+    },
+    {
+      "chapter": "14",
+      "file": "ch14-skill-files/skill-files.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a project skill checks the repository it was launched in, not a directory it counted to",
+      "ms": 230
+    },
+    {
+      "chapter": "14",
+      "file": "ch14-skill-files/skill-files.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a shared or packaged skill outside the repository still resolves the target repository",
+      "ms": 212
+    },
+    {
+      "chapter": "14",
+      "file": "ch14-skill-files/skill-files.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "PI_REVIEW_GUARD_ROOT overrides discovery, so one installed skill can serve several repositories",
+      "ms": 213
+    },
+    {
+      "chapter": "14",
+      "file": "ch14-skill-files/skill-files.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "skill frontmatter does not become an environment variable",
+      "ms": 273
+    },
+    {
+      "chapter": "14",
+      "file": "ch14-skill-files/skill-files.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a bundled config beside the script is found relative to the script",
+      "ms": 199
+    },
+    {
+      "chapter": "14",
+      "file": "ch14-skill-files/skill-files.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "set -euo pipefail makes a check script fail loudly; without it the same failure exits zero",
+      "ms": 59
+    },
+    {
+      "chapter": "14",
+      "file": "ch14-skill-files/skill-files.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the model is told where the skill lives, so a relative path in SKILL.md can be resolved",
+      "ms": 42
+    },
+    {
+      "chapter": "14",
+      "file": "ch14-skill-files/skill-files.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a bundled file reaches the context only when the model reads it with its own tool",
+      "ms": 33
+    },
+    {
+      "chapter": "15",
+      "file": "ch15-first-extension/first-extension.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the tool is registered, visible to the model, and runs through the real pipeline",
+      "ms": 34
+    },
+    {
+      "chapter": "15",
+      "file": "ch15-first-extension/first-extension.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "base is optional: a call with no arguments is valid and defaults to the working tree",
+      "ms": 15
+    },
+    {
+      "chapter": "15",
+      "file": "ch15-first-extension/first-extension.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the command registers and is listed beside the built-ins",
+      "ms": 12
+    },
+    {
+      "chapter": "16",
+      "file": "ch16-events/guard.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "with no UI to ask, the guard refuses a force push and the command never runs",
+      "ms": 34
+    },
+    {
+      "chapter": "16",
+      "file": "ch16-events/guard.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an ordinary command is left alone and does run",
+      "ms": 73
+    },
+    {
+      "chapter": "16",
+      "file": "ch16-events/guard.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the guard also covers reset --hard",
+      "ms": 13
+    },
+    {
+      "chapter": "16",
+      "file": "ch16-events/guard.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the multi-hook version blocks with a reason the model can act on",
+      "ms": 14
+    },
+    {
+      "chapter": "16",
+      "file": "ch16-events/guard.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a tool_call handler that throws blocks the tool as a fail-safe",
+      "ms": 16
+    },
+    {
+      "chapter": "17",
+      "file": "ch17-tools/tools.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a non-zero exit from a command is data, not a failed tool result",
+      "ms": 58
+    },
+    {
+      "chapter": "17",
+      "file": "ch17-tools/tools.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "structuredContent is returned alongside the model-facing content",
+      "ms": 17
+    },
+    {
+      "chapter": "17",
+      "file": "ch17-tools/tools.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "nested calls: review_diff runs two other tools and reads their outcomes",
+      "ms": 35
+    },
+    {
+      "chapter": "17",
+      "file": "ch17-tools/tools.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "nested calls pass through the same gate as model-issued calls",
+      "ms": 32
+    },
+    {
+      "chapter": "17",
+      "file": "ch17-tools/tools.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "annotations: a tool with readOnlyHint passes the approval extension, one without is blocked when there is no UI",
+      "ms": 27
+    },
+    {
+      "chapter": "17",
+      "file": "ch17-tools/tools.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "dynamic activation: a deferred tool is inactive until the tool that needs it is called",
+      "ms": 27
+    },
+    {
+      "chapter": "17",
+      "file": "ch17-tools/tools.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the renderer extension loads and registers without error",
+      "ms": 9
+    },
+    {
+      "chapter": "18",
+      "file": "ch18-knowledge/knowledge.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "prompt-customizer: the tool guidance section is derived from the tools that are active",
+      "ms": 32
+    },
+    {
+      "chapter": "18",
+      "file": "ch18-knowledge/knowledge.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "prompt-customizer: a tool that is not active is not described",
+      "ms": 13
+    },
+    {
+      "chapter": "18",
+      "file": "ch18-knowledge/knowledge.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "review-guard section appears when run_checks is active and disappears with it",
+      "ms": 58
+    },
+    {
+      "chapter": "18",
+      "file": "ch18-knowledge/knowledge.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "review-guard section tracks the active tool set, not the registered one",
+      "ms": 41
+    },
+    {
+      "chapter": "18",
+      "file": "ch18-knowledge/knowledge.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "getAllTools would have reported the disabled tool; getActiveTools does not",
+      "ms": 12
+    },
+    {
+      "chapter": "18",
+      "file": "ch18-knowledge/knowledge.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "settle-guard: answering without running the checks buys exactly one more request",
+      "ms": 14
+    },
+    {
+      "chapter": "18",
+      "file": "ch18-knowledge/knowledge.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "settle-guard: having run the checks, the model is not asked again",
+      "ms": 48
+    },
+    {
+      "chapter": "19",
+      "file": "ch19-state/guard-blocks.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a protected write is blocked, the user is told, and the block is a session entry",
+      "ms": 36
+    },
+    {
+      "chapter": "19",
+      "file": "ch19-state/guard-blocks.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the entry is invisible to the model: it is never in what the provider receives",
+      "ms": 17
+    },
+    {
+      "chapter": "19",
+      "file": "ch19-state/guard-blocks.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "/guard-blocks reads the state back",
+      "ms": 17
+    },
+    {
+      "chapter": "19",
+      "file": "ch19-state/guard-blocks.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "state follows the branch: navigating to before the block makes the count drop",
+      "ms": 18
+    },
+    {
+      "chapter": "20",
+      "file": "ch20-ui/ui.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "with a UI (RPC): the command opens a dialog and shows the answer as a notification",
+      "ms": 29
+    },
+    {
+      "chapter": "20",
+      "file": "ch20-ui/ui.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "with no UI (print or JSON): the same command prints instead of opening a dialog",
+      "ms": 14
+    },
+    {
+      "chapter": "20",
+      "file": "ch20-ui/ui.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "hasUI is not the same as a terminal: under RPC the custom screen is refused, not attempted",
+      "ms": 14
+    },
+    {
+      "chapter": "20",
+      "file": "ch20-ui/ui.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "component: every line fits the width, measured in columns, including wide characters",
+      "ms": 2
+    },
+    {
+      "chapter": "20",
+      "file": "ch20-ui/ui.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "component: output is cached by width and recomputed after invalidate()",
+      "ms": 0
+    },
+    {
+      "chapter": "20",
+      "file": "ch20-ui/ui.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "component: it finishes through the completion callback on q or Escape",
+      "ms": 1
+    },
+    {
+      "chapter": "20",
+      "file": "ch20-ui/ui.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the smallest command receives its raw argument text",
+      "ms": 20
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/mcp.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an MCP tool is named mcp__<server>__<tool>, and a name-keyed gate that forgets the prefix lets it through",
+      "ms": 50
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/mcp.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the deny-list gate keys on the full name: with no UI the call is blocked and the server never hears it",
+      "ms": 16
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/mcp.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "with a UI the person decides: approve lets it through, decline blocks it",
+      "ms": 31
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/mcp.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "annotations are hints, not permission: a server that lies about readOnlyHint passes the gate",
+      "ms": 19
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/mcp.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "exposure decides whether the model is told the tool exists",
+      "ms": 41
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/mcp.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "pi.registerMcpServer adds a server for the session; unregisterMcpServer takes it away again",
+      "ms": 20
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/mcp.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the book's registration file loads, and its command runs without error",
+      "ms": 14
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/tool-allowlist.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an allowlist naming only built-in tools leaves a codemode-exposure MCP tool callable from a script",
+      "ms": 121
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/tool-allowlist.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the same hold for a deferred-exposure tool",
+      "ms": 53
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/tool-allowlist.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "but a direct-exposure tool kept without being named is inert: neither declared nor callable",
+      "ms": 53
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/tool-allowlist.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an mcp__ pattern makes a direct-exposure tool declared, where an unnamed one was not",
+      "ms": 106
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/tool-allowlist.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a hidden tool stays unreachable even when a pattern names it",
+      "ms": 49
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/tool-allowlist.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "excludeTools takes MCP tools too, and needs no mcp__ prefix",
+      "ms": 50
+    },
+    {
+      "chapter": "21",
+      "file": "ch21-mcp/tool-allowlist.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "disabledBuiltinExtensions gates built-in extensions, not an injected one",
+      "ms": 59
+    },
+    {
+      "chapter": "22",
+      "file": "ch22-packages/packages.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "pi install of a local path records it in the user settings, relative to the settings file, and copies nothing",
+      "ms": 201
+    },
+    {
+      "chapter": "22",
+      "file": "ch22-packages/packages.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "pi list shows what is installed",
+      "ms": 397
+    },
+    {
+      "chapter": "22",
+      "file": "ch22-packages/packages.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an installed package's prompt template and extension load, with no manifest, from the conventional directories",
+      "ms": 593
+    },
+    {
+      "chapter": "22",
+      "file": "ch22-packages/packages.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "pi -e loads a package for one invocation and writes nothing to settings",
+      "ms": 367
+    },
+    {
+      "chapter": "22",
+      "file": "ch22-packages/packages.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "pi remove takes it away again",
+      "ms": 871
+    },
+    {
+      "chapter": "22",
+      "file": "ch22-packages/packages.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the object form filters a package: [] loads none of that type, and the other types still load",
+      "ms": 359
+    },
+    {
+      "chapter": "22",
+      "file": "ch22-packages/packages.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "filters narrow what the package declares; they cannot expose something it did not",
+      "ms": 895
+    },
+    {
+      "chapter": "22",
+      "file": "ch22-packages/packages.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the same package listed twice loads once: identity is the resolved path",
+      "ms": 378
+    },
+    {
+      "chapter": "22",
+      "file": "ch22-packages/packages.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an explicit manifest can point at resources elsewhere in the package",
+      "ms": 761
+    },
+    {
+      "chapter": "22",
+      "file": "ch22-packages/packages.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "--local writes the declaration to the project settings, which load only once the project is trusted",
+      "ms": 846
+    },
+    {
+      "chapter": "22",
+      "file": "ch22-packages/packages.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a host-provided package listed in dependencies draws a warning; in peerDependencies with a * range it does not",
+      "ms": 1137
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/compaction.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an extension can supply the summary, and Pi still chooses the cut point",
+      "ms": 44
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/compaction.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the next request is built from the summary plus the kept messages, not the full history",
+      "ms": 28
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/compaction.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "compaction replaces what the model sees and deletes nothing from the file",
+      "ms": 27
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/compaction.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an extension can cancel a manual compaction",
+      "ms": 18
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/state.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the cut point is never a tool result, whatever keepRecentTokens is",
+      "ms": 455
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/state.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the result stays with its call: when the cut falls inside the tool exchange, both sides are on the same side",
+      "ms": 381
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/state.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "compaction is iterative: the second summary is given the first as previousSummary",
+      "ms": 25
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/state.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "file operations are extracted for the extension: what was read and what was modified",
+      "ms": 25
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/state.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a single long span splits: when one user message's turns exceed keepRecentTokens, the cut lands inside it",
+      "ms": 27
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/state.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "compaction does not shrink the system prompt or the tool declarations",
+      "ms": 77
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/state.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "compaction replaces what the model reads and nothing in the file: navigating to before the compaction sends the originals again",
+      "ms": 62
+    },
+    {
+      "chapter": "23",
+      "file": "ch23-compaction/state.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an extension that cancels leaves the history exactly as it was",
+      "ms": 64
+    },
+    {
+      "chapter": "24",
+      "file": "ch24-branching/branching.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "/tree on a user message returns its text for editing and moves the leaf to its parent",
+      "ms": 117
+    },
+    {
+      "chapter": "24",
+      "file": "ch24-branching/branching.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "/tree on an assistant response continues after it, with an empty editor",
+      "ms": 86
+    },
+    {
+      "chapter": "24",
+      "file": "ch24-branching/branching.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "submitting an edited prompt makes a sibling: two children of the same parent, one session file",
+      "ms": 95
+    },
+    {
+      "chapter": "24",
+      "file": "ch24-branching/branching.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the abandoned branch is not sent, and is not gone",
+      "ms": 99
+    },
+    {
+      "chapter": "24",
+      "file": "ch24-branching/branching.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "leaving a branch can attach a summary of it: a branch_summary entry with parentId where you land and fromId where you left",
+      "ms": 76
+    },
+    {
+      "chapter": "24",
+      "file": "ch24-branching/branching.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the summary reaches the model on the new branch, and the abandoned messages still do not",
+      "ms": 72
+    },
+    {
+      "chapter": "24",
+      "file": "ch24-branching/branching.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the tree is real data: getTree() shows both branches under their shared parent",
+      "ms": 86
+    },
+    {
+      "chapter": "24",
+      "file": "ch24-branching/branching.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "labels are bookmarks on entries and appear on the tree node",
+      "ms": 70
+    },
+    {
+      "chapter": "24",
+      "file": "ch24-branching/branching.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "RPC: get_fork_messages lists the user prompts, and fork starts a NEW session file whose header names its parent",
+      "ms": 336
+    },
+    {
+      "chapter": "24",
+      "file": "ch24-branching/branching.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "RPC: clone copies the active branch into a new session",
+      "ms": 351
+    },
+    {
+      "chapter": "25",
+      "file": "ch25-queue/queue.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "steering lands after the turn's tool calls and before the next request",
+      "ms": 157
+    },
+    {
+      "chapter": "25",
+      "file": "ch25-queue/queue.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a follow-up waits until the agent would otherwise stop",
+      "ms": 138
+    },
+    {
+      "chapter": "25",
+      "file": "ch25-queue/queue.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "steering drains before follow-ups",
+      "ms": 146
+    },
+    {
+      "chapter": "25",
+      "file": "ch25-queue/queue.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "queue_update carries the complete queue each time, not a delta",
+      "ms": 148
+    },
+    {
+      "chapter": "25",
+      "file": "ch25-queue/queue.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "one-at-a-time (the default) delivers one steering message per turn; all delivers every queued message",
+      "ms": 282
+    },
+    {
+      "chapter": "25",
+      "file": "ch25-queue/queue.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a prompt while streaming, with no behaviour, is an error rather than a guess",
+      "ms": 138
+    },
+    {
+      "chapter": "25",
+      "file": "ch25-queue/queue.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "clearQueue() returns the queued text, which is how an interface restores it into the editor on Escape",
+      "ms": 138
+    },
+    {
+      "chapter": "25",
+      "file": "ch25-queue/queue.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an extension command runs immediately even while the agent is streaming; steering one is refused",
+      "ms": 143
+    },
+    {
+      "chapter": "27",
+      "file": "ch27-session-entries/entries.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the file is JSONL with a header first, then entries linked by id and parentId",
+      "ms": 34
+    },
+    {
+      "chapter": "27",
+      "file": "ch27-session-entries/entries.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "two timestamps, two formats: ISO on the entry, Unix milliseconds on the message",
+      "ms": 17
+    },
+    {
+      "chapter": "27",
+      "file": "ch27-session-entries/entries.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the reading program in the chapter runs against a real session file",
+      "ms": 84
+    },
+    {
+      "chapter": "28",
+      "file": "ch28-admission/admission.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "discovered: the agent dir, the working directory and its parents; not siblings",
+      "ms": 17
+    },
+    {
+      "chapter": "28",
+      "file": "ch28-admission/admission.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "admitted: an override replaces the AGENTS.md beside it, and only that one",
+      "ms": 7
+    },
+    {
+      "chapter": "28",
+      "file": "ch28-admission/admission.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a host owns admission: it can drop or add files before they reach the model",
+      "ms": 8
+    },
+    {
+      "chapter": "29",
+      "file": "ch29-failures/overflow.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a provider's own overflow message, normalised, triggers compact-and-retry as a fresh run",
+      "ms": 53
+    },
+    {
+      "chapter": "29",
+      "file": "ch29-failures/overflow.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "without the handler the same message is just a failure: no recovery is attempted",
+      "ms": 31
+    },
+    {
+      "chapter": "29",
+      "file": "ch29-failures/overflow.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a rate limit that happens to contain the word 'length' is left alone",
+      "ms": 36
+    },
+    {
+      "chapter": "31",
+      "file": "ch31-interface/binary.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the harness spawns the entry the package publishes as `pi`, not a path into dist/",
+      "ms": 1
+    },
+    {
+      "chapter": "31",
+      "file": "ch31-interface/binary.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the same scripted run through print, JSON and RPC gives the same final answer",
+      "ms": 1041
+    },
+    {
+      "chapter": "31",
+      "file": "ch31-interface/binary.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the agent did the same thing under each interface: the same events, in the same order",
+      "ms": 649
+    },
+    {
+      "chapter": "31",
+      "file": "ch31-interface/binary.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "what differs is the observer: print has no events, JSON has no responses, RPC has both",
+      "ms": 980
+    },
+    {
+      "chapter": "31",
+      "file": "ch31-interface/binary.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the failure contract differs by interface, and nothing else about the run does",
+      "ms": 889
+    },
+    {
+      "chapter": "31",
+      "file": "ch31-interface/drivers.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "two interfaces over one agent: same transcript, different observers",
+      "ms": 8
+    },
+    {
+      "chapter": "32",
+      "file": "ch32-headless/headless.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "print mode: the whole interface is the final text on stdout, and a successful run exits 0",
+      "ms": 265
+    },
+    {
+      "chapter": "32",
+      "file": "ch32-headless/headless.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "print mode: a failed final response exits non-zero, with the message on stderr and nothing on stdout",
+      "ms": 297
+    },
+    {
+      "chapter": "32",
+      "file": "ch32-headless/headless.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "JSON mode: the same failure is in the event stream and the exit status is 0",
+      "ms": 287
+    },
+    {
+      "chapter": "32",
+      "file": "ch32-headless/headless.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "with stdin and stdout redirected and no mode given, Pi chooses print mode",
+      "ms": 296
+    },
+    {
+      "chapter": "32",
+      "file": "ch32-headless/headless.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "piped stdin is prepended to the first prompt",
+      "ms": 347
+    },
+    {
+      "chapter": "32",
+      "file": "ch32-headless/headless.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "@path includes a text file in the first prompt",
+      "ms": 308
+    },
+    {
+      "chapter": "32",
+      "file": "ch32-headless/headless.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "`--` lets a prompt begin with a dash instead of being parsed as an option",
+      "ms": 327
+    },
+    {
+      "chapter": "32",
+      "file": "ch32-headless/headless.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "--tools narrows the agent: a model that asks for bash gets a failed result, and nothing runs",
+      "ms": 336
+    },
+    {
+      "chapter": "32",
+      "file": "ch32-headless/headless.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the default tool set can run bash",
+      "ms": 403
+    },
+    {
+      "chapter": "32",
+      "file": "ch32-headless/headless.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "--no-session writes no session file; without it a run against a real directory does",
+      "ms": 706
+    },
+    {
+      "chapter": "33",
+      "file": "ch33-json/json-stream.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the first record is the session header, version 3, and it is not part of the tree",
+      "ms": 313
+    },
+    {
+      "chapter": "33",
+      "file": "ch33-json/json-stream.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "every record is one JSON object terminated by LF, and stdout carries nothing else",
+      "ms": 304
+    },
+    {
+      "chapter": "33",
+      "file": "ch33-json/json-stream.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "U+2028 inside a string is legal JSON and is not a record boundary: a line reader would split it",
+      "ms": 343
+    },
+    {
+      "chapter": "33",
+      "file": "ch33-json/json-stream.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the run lifecycle: agent_start first, agent_end then agent_settled last",
+      "ms": 282
+    },
+    {
+      "chapter": "33",
+      "file": "ch33-json/json-stream.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "message_update is delta-only on the wire: no cumulative message and no partial snapshots",
+      "ms": 284
+    },
+    {
+      "chapter": "33",
+      "file": "ch33-json/json-stream.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "reconstruction: buffered deltas, then text_end content, then message_end, all agree",
+      "ms": 327
+    },
+    {
+      "chapter": "33",
+      "file": "ch33-json/json-stream.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the inner assistantMessageEvent vocabulary uses contentIndex, and provider-level start/done/error are not emitted as message_update",
+      "ms": 289
+    },
+    {
+      "chapter": "33",
+      "file": "ch33-json/json-stream.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "tool execution events carry the call id, name, args and the result",
+      "ms": 374
+    },
+    {
+      "chapter": "33",
+      "file": "ch33-json/json-stream.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "turn_end carries the assistant message and its tool results",
+      "ms": 357
+    },
+    {
+      "chapter": "33",
+      "file": "ch33-json/json-stream.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a failed response is in the stream as a message_end with stopReason error, and the run still settles",
+      "ms": 296
+    },
+    {
+      "chapter": "33",
+      "file": "ch33-json/json-stream.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "extension_error is not a JSON-mode record (it is RPC-only)",
+      "ms": 315
+    },
+    {
+      "chapter": "34",
+      "file": "ch34-sdk/sdk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "streaming: subscribe before prompting, and text arrives as typed deltas",
+      "ms": 37
+    },
+    {
+      "chapter": "34",
+      "file": "ch34-sdk/sdk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a prompt sent while the session is streaming must say steer or follow-up, or it rejects",
+      "ms": 1006
+    },
+    {
+      "chapter": "34",
+      "file": "ch34-sdk/sdk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "SessionManager is authoritative: assigning agent.state.messages does not change what is sent",
+      "ms": 18
+    },
+    {
+      "chapter": "34",
+      "file": "ch34-sdk/sdk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an in-memory SessionManager writes no file",
+      "ms": 15
+    },
+    {
+      "chapter": "34",
+      "file": "ch34-sdk/sdk.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "dispose() stops event delivery",
+      "ms": 29
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "responses repeat the command id, and two outstanding commands are matched by id, not by order",
+      "ms": 359
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a successful prompt response means accepted, not finished: disposition is started, and the run follows",
+      "ms": 340
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "session events carry no command id",
+      "ms": 313
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "agent_end is not the end: agent_settled follows it, and is what a client waits for",
+      "ms": 311
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "prompt while streaming without streamingBehavior is an error response; with steer it is queued",
+      "ms": 1331
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "malformed JSON produces a parse response with no request id",
+      "ms": 269
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an unknown command is an error response, not a crash",
+      "ms": 362
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "closing stdin is an orderly shutdown",
+      "ms": 287
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "RPC mode rejects @file prompt arguments",
+      "ms": 254
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "get_commands lists extension commands, and not the built-in terminal commands",
+      "ms": 328
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "extension UI subprotocol: a dialog blocks on the client, and the response uses the request id",
+      "ms": 333
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "extension UI subprotocol: cancelling delivers false to a confirm",
+      "ms": 319
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "extension_error is an RPC record: a handler that throws is reported, and the run continues",
+      "ms": 326
+    },
+    {
+      "chapter": "35",
+      "file": "ch35-rpc/rpc.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "shipped_binary",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "get_entries uses an entry id as a durable cursor and reports the leaf",
+      "ms": 321
+    },
+    {
+      "chapter": "36",
+      "file": "ch36-model-access/assess.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a valid submission comes back as a typed value",
+      "ms": 7
+    },
+    {
+      "chapter": "36",
+      "file": "ch36-model-access/assess.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "arguments that break the schema are rejected, not passed on",
+      "ms": 3
+    },
+    {
+      "chapter": "36",
+      "file": "ch36-model-access/assess.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "prose instead of a tool call is an error the caller can see",
+      "ms": 0
+    },
+    {
+      "chapter": "36",
+      "file": "ch36-model-access/assess.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a failed request is an exception with the provider's message, not a silent value",
+      "ms": 0
+    },
+    {
+      "chapter": "37",
+      "file": "ch37-agent-core/research-agent.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the loop runs tool then answer, and the transcript records both",
+      "ms": 8
+    },
+    {
+      "chapter": "37",
+      "file": "ch37-agent-core/research-agent.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a tool that finds nothing returns data, not a failure",
+      "ms": 1
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a valid submission ends the run after one request",
+      "ms": 7
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an invalid submission is returned to the model, which repairs it",
+      "ms": 2
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "repeated invalid submissions stop at maxAttempts",
+      "ms": 2
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "prose with no submit is a StepFailed, not a silent empty value",
+      "ms": 1
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "steps chain as ordinary typed functions",
+      "ms": 2
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a step can use a lookup tool and still must finish with a valid submit",
+      "ms": 1
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a failed request is a provider failure, not a model that chose prose",
+      "ms": 1
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a model that never submits is stopped by maxTurns, and says so",
+      "ms": 1
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "prose with no submit is kind no-submit",
+      "ms": 0
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a submission in a batch with a non-terminating tool cannot outlive maxTurns",
+      "ms": 1
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a submission in a mixed batch is still reported as a provider failure if the run then dies",
+      "ms": 1
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the first valid submission wins when the model submits more than once",
+      "ms": 1
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an invalid submission in a mixed batch costs one attempt, not one per tool",
+      "ms": 1
+    },
+    {
+      "chapter": "38",
+      "file": "ch38-typed-step/step.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "invalid submissions in mixed batches still exhaust the attempt budget",
+      "ms": 1
+    },
+    {
+      "chapter": "39",
+      "file": "ch39-seams/seams.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "order: where each hook sits in one tool-using run",
+      "ms": 8
+    },
+    {
+      "chapter": "39",
+      "file": "ch39-seams/seams.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "beforeToolCall can refuse, and then the effect never happens",
+      "ms": 2
+    },
+    {
+      "chapter": "39",
+      "file": "ch39-seams/seams.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "afterToolCall can rewrite the result but cannot undo the effect",
+      "ms": 1
+    },
+    {
+      "chapter": "39",
+      "file": "ch39-seams/seams.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "transformContext changes what the provider receives, not what the agent stored",
+      "ms": 1
+    },
+    {
+      "chapter": "39",
+      "file": "ch39-seams/seams.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "finishTurn can end the run early",
+      "ms": 1
+    },
+    {
+      "chapter": "39",
+      "file": "ch39-seams/seams.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "finishTurn can ask for one more request when nothing else would",
+      "ms": 1
+    },
+    {
+      "chapter": "39",
+      "file": "ch39-seams/seams.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "prepareRequest can swap the model for one request",
+      "ms": 0
+    },
+    {
+      "chapter": "39",
+      "file": "ch39-seams/seams.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "runToolCall passes a nested call through beforeToolCall, and a blocked one never executes",
+      "ms": 0
+    },
+    {
+      "chapter": "40",
+      "file": "ch40-composition/pipeline.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the deterministic parts need no model at all",
+      "ms": 1
+    },
+    {
+      "chapter": "40",
+      "file": "ch40-composition/pipeline.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "cheap path: one assessment call and one summary step, no agent",
+      "ms": 7
+    },
+    {
+      "chapter": "40",
+      "file": "ch40-composition/pipeline.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an invented citation stops the pipeline before anything downstream runs",
+      "ms": 1
+    },
+    {
+      "chapter": "40",
+      "file": "ch40-composition/pipeline.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an invented citation on the escalation path is caught too",
+      "ms": 3
+    },
+    {
+      "chapter": "40",
+      "file": "ch40-composition/pipeline.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a truthful citation of evidence the agent found passes the second check",
+      "ms": 2
+    },
+    {
+      "chapter": "40",
+      "file": "ch40-composition/pipeline.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "escalation: only an insufficient verdict pays for the agent",
+      "ms": 1
+    },
+    {
+      "chapter": "40",
+      "file": "ch40-composition/pipeline.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the escalation agent is bounded, so a model that keeps searching cannot run away",
+      "ms": 3
+    },
+    {
+      "chapter": "40",
+      "file": "ch40-composition/pipeline.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "an escalation cut off before it found anything fails loudly instead of re-deciding on no new evidence",
+      "ms": 2
+    },
+    {
+      "chapter": "41",
+      "file": "ch41-testing/testing.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "level 1: a scripted response drives the code deterministically",
+      "ms": 9
+    },
+    {
+      "chapter": "41",
+      "file": "ch41-testing/testing.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "level 2: assert on the event stream, not on the wording",
+      "ms": 2
+    },
+    {
+      "chapter": "41",
+      "file": "ch41-testing/testing.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "level 3: pass^k exposes what the average hides",
+      "ms": 65
+    },
+    {
+      "chapter": "41",
+      "file": "ch41-testing/testing.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "level 3: a thrown step counts as a failed run and does not crash the evaluation",
+      "ms": 0
+    },
+    {
+      "chapter": "42",
+      "file": "ch42-authority/replay.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "a tool can declare replay about itself, and nothing in the declaration verifies it",
+      "ms": 0
+    },
+    {
+      "chapter": "42",
+      "file": "ch42-authority/replay.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the scan would notice a reader, so an empty result is not vacuous",
+      "ms": 0
+    },
+    {
+      "chapter": "42",
+      "file": "ch42-authority/replay.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "1.0.4: no shipped JavaScript in the Pi packages reads a tool's replay field",
+      "ms": 92
+    },
+    {
+      "chapter": null,
+      "file": "harness/probe.test.ts",
+      "claim_class": "OBSERVED",
+      "evidence_scope": "in_process_runtime",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "harness: a real session runs a scripted turn and an inline extension sees the tool call",
+      "ms": 43
+    },
+    {
+      "chapter": "26",
+      "file": "ch26-message-types/assert-equal.ts",
+      "claim_class": "DOCUMENTED",
+      "evidence_scope": "declarations",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the declarations printed in the chapter are mutually assignable with, and have the same keys as, the exported types",
+      "ms": 0
+    },
+    {
+      "chapter": "27",
+      "file": "ch27-session-entries/assert-equal.ts",
+      "claim_class": "DOCUMENTED",
+      "evidence_scope": "declarations",
+      "compile": "pass",
+      "runtime": "pass",
+      "claim": "the declarations printed in the chapter are mutually assignable with, and have the same keys as, the exported types",
+      "ms": 0
+    }
+  ],
+  "embeds": [
+    {
+      "chapter": "1",
+      "kind": "example",
+      "source": "ch01-agent-core/agent-core.ts"
+    },
+    {
+      "chapter": "5",
+      "kind": "declaration",
+      "source": "ch27-session-entries/declared.ts"
+    },
+    {
+      "chapter": "6",
+      "kind": "declaration",
+      "source": "ch26-message-types/declared.ts"
+    },
+    {
+      "chapter": "11",
+      "kind": "example",
+      "source": "ch11-guard/guard.ts"
+    },
+    {
+      "chapter": "15",
+      "kind": "example",
+      "source": "ch15-first-extension/hello.ts"
+    },
+    {
+      "chapter": "15",
+      "kind": "example",
+      "source": "ch15-first-extension/review-scope.ts"
+    },
+    {
+      "chapter": "16",
+      "kind": "example",
+      "source": "ch16-events/guard.ts"
+    },
+    {
+      "chapter": "16",
+      "kind": "example",
+      "source": "ch16-events/guard-status.ts"
+    },
+    {
+      "chapter": "17",
+      "kind": "excerpt",
+      "source": "ch17-tools/tools.ts"
+    },
+    {
+      "chapter": "17",
+      "kind": "excerpt",
+      "source": "ch17-tools/tools.ts"
+    },
+    {
+      "chapter": "17",
+      "kind": "excerpt",
+      "source": "ch17-tools/approval.ts"
+    },
+    {
+      "chapter": "17",
+      "kind": "excerpt",
+      "source": "ch17-tools/tools.ts"
+    },
+    {
+      "chapter": "17",
+      "kind": "excerpt",
+      "source": "ch17-tools/tools.ts"
+    },
+    {
+      "chapter": "17",
+      "kind": "excerpt",
+      "source": "ch17-tools/dynamic.ts"
+    },
+    {
+      "chapter": "17",
+      "kind": "excerpt",
+      "source": "ch17-tools/renderer.ts"
+    },
+    {
+      "chapter": "18",
+      "kind": "excerpt",
+      "source": "ch18-knowledge/prompt-customizer.ts"
+    },
+    {
+      "chapter": "18",
+      "kind": "excerpt",
+      "source": "ch18-knowledge/review-guard-section.ts"
+    },
+    {
+      "chapter": "18",
+      "kind": "excerpt",
+      "source": "ch18-knowledge/settle-guard.ts"
+    },
+    {
+      "chapter": "19",
+      "kind": "excerpt",
+      "source": "ch19-state/guard-blocks.ts"
+    },
+    {
+      "chapter": "19",
+      "kind": "excerpt",
+      "source": "ch19-state/guard-blocks.ts"
+    },
+    {
+      "chapter": "20",
+      "kind": "example",
+      "source": "ch20-ui/guard-minimal.ts"
+    },
+    {
+      "chapter": "20",
+      "kind": "excerpt",
+      "source": "ch20-ui/guard-ui.ts"
+    },
+    {
+      "chapter": "20",
+      "kind": "excerpt",
+      "source": "ch20-ui/guard-ui.ts"
+    },
+    {
+      "chapter": "20",
+      "kind": "excerpt",
+      "source": "ch20-ui/guard-ui.ts"
+    },
+    {
+      "chapter": "20",
+      "kind": "excerpt",
+      "source": "ch20-ui/guard-ui.ts"
+    },
+    {
+      "chapter": "20",
+      "kind": "example",
+      "source": "ch20-ui/block-list.ts"
+    },
+    {
+      "chapter": "20",
+      "kind": "excerpt",
+      "source": "ch20-ui/guard-ui.ts"
+    },
+    {
+      "chapter": "21",
+      "kind": "excerpt",
+      "source": "ch21-mcp/register-server.ts"
+    },
+    {
+      "chapter": "21",
+      "kind": "excerpt",
+      "source": "ch21-mcp/mcp-gate.ts"
+    },
+    {
+      "chapter": "21",
+      "kind": "excerpt",
+      "source": "ch17-tools/approval.ts"
+    },
+    {
+      "chapter": "23",
+      "kind": "declaration",
+      "source": "ch27-session-entries/declared.ts"
+    },
+    {
+      "chapter": "23",
+      "kind": "excerpt",
+      "source": "ch23-compaction/custom-summary.ts"
+    },
+    {
+      "chapter": "23",
+      "kind": "excerpt",
+      "source": "ch23-compaction/cancel-compaction.ts"
+    },
+    {
+      "chapter": "24",
+      "kind": "declaration",
+      "source": "ch27-session-entries/declared.ts"
+    },
+    {
+      "chapter": "26",
+      "kind": "declaration",
+      "source": "ch26-message-types/declared.ts"
+    },
+    {
+      "chapter": "26",
+      "kind": "declaration",
+      "source": "ch26-message-types/declared.ts"
+    },
+    {
+      "chapter": "26",
+      "kind": "declaration",
+      "source": "ch26-message-types/declared.ts"
+    },
+    {
+      "chapter": "26",
+      "kind": "declaration",
+      "source": "ch26-message-types/declared.ts"
+    },
+    {
+      "chapter": "26",
+      "kind": "declaration",
+      "source": "ch26-message-types/declared.ts"
+    },
+    {
+      "chapter": "26",
+      "kind": "declaration",
+      "source": "ch26-message-types/declared.ts"
+    },
+    {
+      "chapter": "26",
+      "kind": "declaration",
+      "source": "ch26-message-types/declared.ts"
+    },
+    {
+      "chapter": "27",
+      "kind": "declaration",
+      "source": "ch27-session-entries/declared.ts"
+    },
+    {
+      "chapter": "27",
+      "kind": "example",
+      "source": "ch27-session-entries/read-session.ts"
+    },
+    {
+      "chapter": "28",
+      "kind": "excerpt",
+      "source": "ch28-admission/admission.test.ts"
+    },
+    {
+      "chapter": "28",
+      "kind": "excerpt",
+      "source": "ch28-admission/admission.test.ts"
+    },
+    {
+      "chapter": "29",
+      "kind": "example",
+      "source": "ch29-failures/overflow.ts"
+    },
+    {
+      "chapter": "30",
+      "kind": "documented-not-run",
+      "source": ""
+    },
+    {
+      "chapter": "31",
+      "kind": "example",
+      "source": "ch31-interface/drivers.ts"
+    },
+    {
+      "chapter": "31",
+      "kind": "excerpt",
+      "source": "ch31-interface/drivers.test.ts"
+    },
+    {
+      "chapter": "33",
+      "kind": "illustrative",
+      "source": ""
+    },
+    {
+      "chapter": "34",
+      "kind": "documented-not-run",
+      "source": ""
+    },
+    {
+      "chapter": "34",
+      "kind": "illustrative",
+      "source": ""
+    },
+    {
+      "chapter": "34",
+      "kind": "documented-not-run",
+      "source": ""
+    },
+    {
+      "chapter": "36",
+      "kind": "example",
+      "source": "ch36-model-access/assess.ts"
+    },
+    {
+      "chapter": "36",
+      "kind": "excerpt",
+      "source": "ch36-model-access/assess.ts"
+    },
+    {
+      "chapter": "36",
+      "kind": "excerpt",
+      "source": "ch36-model-access/assess.test.ts"
+    },
+    {
+      "chapter": "36",
+      "kind": "documented-not-run",
+      "source": ""
+    },
+    {
+      "chapter": "36",
+      "kind": "documented-not-run",
+      "source": ""
+    },
+    {
+      "chapter": "37",
+      "kind": "illustrative",
+      "source": ""
+    },
+    {
+      "chapter": "37",
+      "kind": "illustrative",
+      "source": ""
+    },
+    {
+      "chapter": "37",
+      "kind": "example",
+      "source": "ch37-agent-core/research-agent.ts"
+    },
+    {
+      "chapter": "37",
+      "kind": "excerpt",
+      "source": "ch37-agent-core/research-agent.test.ts"
+    },
+    {
+      "chapter": "37",
+      "kind": "excerpt",
+      "source": "ch37-agent-core/research-agent.test.ts"
+    },
+    {
+      "chapter": "38",
+      "kind": "example",
+      "source": "ch38-typed-step/step.ts"
+    },
+    {
+      "chapter": "38",
+      "kind": "illustrative",
+      "source": ""
+    },
+    {
+      "chapter": "38",
+      "kind": "illustrative",
+      "source": ""
+    },
+    {
+      "chapter": "38",
+      "kind": "illustrative",
+      "source": ""
+    },
+    {
+      "chapter": "38",
+      "kind": "illustrative",
+      "source": ""
+    },
+    {
+      "chapter": "39",
+      "kind": "excerpt",
+      "source": "ch39-seams/seams.test.ts"
+    },
+    {
+      "chapter": "39",
+      "kind": "excerpt",
+      "source": "ch39-seams/seams.test.ts"
+    },
+    {
+      "chapter": "39",
+      "kind": "excerpt",
+      "source": "ch39-seams/seams.test.ts"
+    },
+    {
+      "chapter": "40",
+      "kind": "example",
+      "source": "ch40-composition/pipeline.ts"
+    },
+    {
+      "chapter": "40",
+      "kind": "excerpt",
+      "source": "ch40-composition/pipeline.ts"
+    },
+    {
+      "chapter": "41",
+      "kind": "excerpt",
+      "source": "ch41-testing/testing.test.ts"
+    },
+    {
+      "chapter": "41",
+      "kind": "excerpt",
+      "source": "ch41-testing/testing.test.ts"
+    },
+    {
+      "chapter": "41",
+      "kind": "example",
+      "source": "ch41-testing/eval.ts"
+    },
+    {
+      "chapter": "41",
+      "kind": "documented-not-run",
+      "source": ""
+    },
+    {
+      "chapter": "42",
+      "kind": "excerpt",
+      "source": "ch21-mcp/mcp.test.ts"
+    },
+    {
+      "chapter": "42",
+      "kind": "excerpt",
+      "source": "ch42-authority/replay.test.ts"
+    }
+  ]
+}

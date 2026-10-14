@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": ["ch*/**/*.ts", "harness/**/*.ts", "experiences/**/*.ts", "export-experience.ts", "real-model/**/*.ts"],
+  "exclude": ["node_modules"]
+}
